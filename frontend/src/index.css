@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Nunito', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+
+  /* CozyBites Light Theme */
+  --background: #fff9f0;
+  --surface: #ffffff;
+
+  --primary: #d98255;
+  --primary-light: #f3c5aa;
+
+  --secondary: #a8b98a;
+  --accent: #f2c879;
+
+  --text-primary: #453832;
+  --text-secondary: #8a7d75;
+
+  --border: #ede2d7;
+
+  --shadow-soft: 0 6px 20px rgba(91, 70, 57, 0.08);
+
+  --radius-small: 12px;
+  --radius-medium: 18px;
+  --radius-large: 24px;
+}
+
+[data-theme='dark'] {
+  --background: #24211f;
+  --surface: #302c29;
+
+  --primary: #d9a17f;
+  --primary-light: #4a3b34;
+
+  --secondary: #aabd91;
+  --accent: #d8bd7c;
+
+  --text-primary: #f6eee7;
+  --text-secondary: #bcaea5;
+
+  --border: #49413c;
+
+  --shadow-soft:
+    0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--background);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+#root {
+  min-height: 100vh;
+}

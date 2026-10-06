@@ -1,0 +1,1344 @@
+/* ========================================
+   CozyBites App Layout
+======================================== */
+.app {
+  min-height: 100vh;
+  padding: 40px 6%;
+}
+
+/* ========================================
+   Navbar
+======================================== */
+.navbar {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  padding: 14px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+
+  box-shadow: var(--shadow-soft);
+}
+
+/* ---------- Logo ---------- */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.navbar-capybara {
+  font-size: 1.8rem;
+}
+
+.navbar-logo {
+  color: var(--text-primary);
+
+  font-size: 1.45rem;
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+/* ---------- Navigation ---------- */
+.navbar-links {
+  display: flex;
+  align-items: center;
+
+  gap: 32px;
+}
+
+.navbar-links a {
+  color: var(--text-secondary);
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--primary);
+}
+
+/* ---------- Right Side Actions ---------- */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+/* ========================================
+   Language Toggle
+======================================== */
+.language-toggle {
+  display: flex;
+  align-items: center;
+
+  padding: 4px;
+
+  background-color: #f7eee3;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.language-option {
+  min-width: 48px;
+
+  padding: 7px 12px;
+
+  border: none;
+  border-radius: 999px;
+
+  background-color: transparent;
+  color: var(--text-secondary);
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.language-option:hover {
+  color: var(--text-primary);
+}
+
+.language-option.active {
+  background-color: var(--surface);
+  color: var(--text-primary);
+
+  box-shadow: 0 2px 8px rgba(91, 70, 57, 0.1);
+}
+
+/* ========================================
+   Light / Dark Theme Button
+======================================== */
+.theme-button {
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: #f6e8d8;
+  color: #8c6a55;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.theme-button:hover {
+  background-color: #edddca;
+
+  transform: rotate(8deg);
+}
+
+.theme-icon {
+  width: 22px;
+  height: 22px;
+}
+
+[data-theme='dark'] .language-toggle {
+  background-color: #39322f;
+}
+
+[data-theme='dark'] .theme-button {
+  background-color: #39322f;
+  color: #e7c98d;
+}
+
+[data-theme='dark'] .theme-button:hover {
+  background-color: #443b37;
+}
+
+[data-theme='dark'] .search-bar input::placeholder {
+  color: #8f8179;
+}
+
+[data-theme='dark'] .view-all-button:hover {
+  background-color: #39322f;
+}
+
+[data-theme='dark'] .category-icon,
+[data-theme='dark'] .method-icon {
+  background-color: #39322f;
+}
+
+[data-theme='dark'] .recipe-book {
+  background-color: #292522;
+  border-color: #49413c;
+}
+
+[data-theme='dark'] .book-page {
+  background-color: #302c29;
+}
+
+[data-theme='dark'] .method-item:hover {
+  background-color: #3b4034;
+  border-color: #4a5140;
+}
+
+[data-theme='dark'] .book-note {
+  color: #bca58f;
+}
+
+/* ========================================
+   Hero Section
+======================================== */
+.hero {
+  width: 100%;
+  max-width: 850px;
+
+  margin: 0 auto;
+  padding: 90px 20px 55px;
+
+  text-align: center;
+}
+
+/* ---------- Capybara ---------- */
+.hero-capybara {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 3.2rem;
+}
+
+/* ---------- Main Heading ---------- */
+.hero h1 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800;
+
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+}
+
+/* ---------- Hero Description ---------- */
+.hero p {
+  margin: 16px 0 32px;
+
+  color: var(--text-secondary);
+
+  font-size: 1.1rem;
+  font-weight: 500;
+
+  line-height: 1.6;
+}
+
+/* ========================================
+   Search Bar
+======================================== */
+.search-bar {
+  width: 100%;
+  max-width: 700px;
+  height: 62px;
+
+  margin: 0 auto;
+
+  padding:
+    7px
+    7px
+    7px
+    20px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  background-color: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  box-shadow: var(--shadow-soft);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.search-bar:focus-within {
+  border-color: var(--secondary);
+
+  box-shadow:
+    0 6px 20px rgba(91, 70, 57, 0.08),
+    0 0 0 3px rgba(168, 185, 138, 0.15);
+}
+
+/* ---------- Search Icon ---------- */
+.search-icon {
+  width: 21px;
+  height: 21px;
+
+  flex-shrink: 0;
+
+  color: var(--secondary);
+}
+
+/* ---------- Search Input ---------- */
+.search-bar input {
+  flex: 1;
+
+  min-width: 0;
+
+  border: none;
+  outline: none;
+
+  background-color: transparent;
+  color: var(--text-primary);
+
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.search-bar input::placeholder {
+  color: #aa9d94;
+}
+
+/* ---------- Search Button ---------- */
+.search-button {
+  height: 48px;
+
+  padding: 0 25px;
+
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 999px;
+
+  background-color: var(--secondary);
+  color: #ffffff;
+
+  font-weight: 800;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.search-button:hover {
+  transform: translateY(-1px);
+
+  opacity: 0.92;
+
+  box-shadow: 0 4px 12px rgba(91, 70, 57, 0.12);
+}
+
+.search-button:active {
+  transform: translateY(0);
+}
+
+/* ========================================
+   Cooking Method Section
+======================================== */
+
+.cooking-method-section {
+  width: 100%;
+  max-width: 1050px;
+
+  margin: 20px auto 0;
+  padding: 55px 0 80px;
+}
+
+.cooking-method-heading {
+  margin-bottom: 30px;
+
+  text-align: center;
+}
+
+.cooking-method-heading h2 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 2rem;
+  font-weight: 800;
+
+  letter-spacing: -0.7px;
+}
+
+.cooking-method-heading p {
+  margin: 8px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 1rem;
+}
+
+
+/* ========================================
+   Recipe Book
+======================================== */
+
+.recipe-book {
+  position: relative;
+
+  min-height: 420px;
+
+  border: 1px solid #e7d9ca;
+  border-radius: 28px;
+
+  background-color: #f7ecdc;
+
+  box-shadow:
+    0 18px 45px rgba(91, 70, 57, 0.12);
+
+  overflow: hidden;
+}
+
+  .book-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  min-height: 420px;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* ========================================
+   Book Pages
+======================================== */
+
+.book-page {
+  padding: 34px 45px 35px;
+
+  background-color: #fffdf8;
+}
+
+.book-page-left {
+  border-radius: 27px 5px 5px 27px;
+
+  box-shadow:
+    inset -10px 0 18px rgba(91, 70, 57, 0.04);
+}
+
+.book-page-right {
+  border-radius: 5px 27px 27px 5px;
+
+  box-shadow:
+    inset 10px 0 18px rgba(91, 70, 57, 0.04);
+}
+
+/* ========================================
+   Book Page Animation
+======================================== */
+
+.page-exit-left {
+  opacity: 0;
+  transform: translateX(-18px);
+}
+
+.page-exit-right {
+  opacity: 0;
+  transform: translateX(18px);
+}
+
+.page-enter-right {
+  animation: enterFromRight 0.25s ease;
+}
+
+.page-enter-left {
+  animation: enterFromLeft 0.25s ease;
+}
+
+@keyframes enterFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes enterFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ---------- Little Handwritten Note ---------- */
+
+.book-note {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: #b2977f;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* ========================================
+   Method Items
+======================================== */
+
+.method-item {
+  width: 100%;
+
+  margin-bottom: 12px;
+  padding: 16px 17px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  text-align: left;
+
+  border: 1px solid transparent;
+  border-radius: 18px;
+
+  background-color: transparent;
+
+  color: var(--text-primary);
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.method-item:hover {
+  background-color: #f1f3e9;
+
+  border-color: #dfe5d0;
+
+  transform: translateX(3px);
+}
+
+
+/* ---------- Method Icon ---------- */
+
+.method-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background-color: #f7eee3;
+
+  font-size: 1.45rem;
+}
+
+
+/* ---------- Method Text ---------- */
+
+.method-text {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.method-text strong {
+  color: var(--text-primary);
+
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.method-text small {
+  color: var(--text-secondary);
+
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+
+/* ---------- Method Arrow ---------- */
+
+.method-arrow {
+  color: var(--secondary);
+
+  font-size: 1.1rem;
+
+  opacity: 0;
+
+  transform: translateX(-5px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.method-item:hover .method-arrow {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+
+/* ========================================
+   Binder Rings
+======================================== */
+
+.binder-rings {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 0;
+  bottom: 0;
+  left: 50%;
+
+  width: 34px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  pointer-events: none;
+}
+
+.binder-rings span {
+  position: relative;
+
+  width: 42px;
+  height: 18px;
+
+  border: 3px solid #b9a894;
+  border-radius: 999px;
+
+  background-color: transparent;
+
+  box-shadow:
+    0 2px 4px rgba(91, 70, 57, 0.12);
+}
+
+.binder-rings span::before,
+.binder-rings span::after {
+  content: '';
+
+  position: absolute;
+
+  top: 50%;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background-color: #e2d5c6;
+
+  transform: translateY(-50%);
+}
+
+.binder-rings span::before {
+  left: -8px;
+}
+
+.binder-rings span::after {
+  right: -8px;
+}
+
+
+/* ========================================
+   Page Navigation
+======================================== */
+
+.book-navigation {
+  margin-top: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+}
+
+.page-button {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  background-color: var(--surface);
+  color: var(--text-primary);
+
+  font-size: 1rem;
+  font-weight: 800;
+
+  box-shadow: var(--shadow-soft);
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.page-button:hover:not(:disabled) {
+  background-color: #f1f3e9;
+
+  transform: translateY(-2px);
+}
+
+.page-button:disabled {
+  cursor: default;
+
+  opacity: 0.35;
+}
+
+/* ---------- Page Indicator ---------- */
+
+.page-indicator {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+.page-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background-color: #d8ccbf;
+
+  transition:
+    width 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.page-dot.active {
+  width: 19px;
+
+  border-radius: 999px;
+
+  background-color: var(--secondary);
+}
+
+.page-number {
+  margin-left: 7px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+/* ========================================
+   Cozy Picks
+======================================== */
+
+.cozy-picks-section {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 20px auto 0;
+  padding: 55px 0 80px;
+}
+
+
+/* ========================================
+   Recipe Grid
+======================================== */
+
+.recipe-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+
+/* ========================================
+   Recipe Card
+======================================== */
+
+.recipe-card {
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: 26px;
+
+  background-color: var(--surface);
+
+  box-shadow: var(--shadow-soft);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 16px 35px rgba(91, 70, 57, 0.13);
+}
+
+
+/* ---------- Image ---------- */
+
+.recipe-image-wrapper {
+  position: relative;
+
+  height: 235px;
+
+  overflow: hidden;
+
+  background-color: #f2eadf;
+}
+
+.recipe-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.35s ease;
+}
+
+.recipe-card:hover .recipe-image {
+  transform: scale(1.035);
+}
+
+
+/* ---------- Favorite ---------- */
+
+.favorite-button {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: rgba(255, 253, 248, 0.92);
+  color: #8c6a55;
+
+  box-shadow:
+    0 4px 12px rgba(91, 70, 57, 0.1);
+
+  backdrop-filter: blur(6px);
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.favorite-button:hover {
+  transform: scale(1.07);
+
+  background-color: #fffdf8;
+}
+
+.favorite-button svg {
+  width: 19px;
+  height: 19px;
+}
+
+
+/* ---------- Category Badge ---------- */
+
+.recipe-category-badge {
+  position: absolute;
+
+  left: 15px;
+  bottom: 15px;
+
+  padding: 7px 12px;
+
+  border-radius: 999px;
+
+  background-color: rgba(255, 253, 248, 0.92);
+  color: var(--text-primary);
+
+  font-size: 0.75rem;
+  font-weight: 800;
+
+  text-transform: capitalize;
+
+  backdrop-filter: blur(6px);
+}
+
+
+/* ========================================
+   Recipe Card Content
+======================================== */
+
+.recipe-card-content {
+  padding: 20px 21px 22px;
+}
+
+.recipe-title-row {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.recipe-title-row h3 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 1.2rem;
+  font-weight: 800;
+
+  line-height: 1.25;
+}
+
+.recipe-chinese-name {
+  display: block;
+
+  margin-top: 4px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.recipe-description {
+  margin: 13px 0 17px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.9rem;
+
+  line-height: 1.55;
+}
+
+
+/* ========================================
+   Recipe Metadata
+======================================== */
+
+.recipe-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.recipe-meta > span {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+}
+
+.recipe-meta svg {
+  width: 15px;
+  height: 15px;
+
+  color: var(--secondary);
+}
+
+.meta-dot {
+  opacity: 0.45;
+}
+
+.meat-type {
+  text-transform: capitalize;
+
+  color: #9b735b;
+}
+
+/* ========================================
+   Responsive Design
+======================================== */
+@media (max-width: 800px) {
+
+  .app {
+    padding: 24px 4%;
+  }
+
+  .navbar {
+    padding: 12px 14px;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 70px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .category-grid {
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  }
+
+  .categories-section {
+  padding-top: 35px;
+  }
+
+  .book-content {
+  grid-template-columns: 1fr;
+  }
+
+  .book-page-left,
+  .book-page-right {
+  border-radius: 24px;
+  box-shadow: none;
+  }
+
+  .book-page-left {
+  border-radius: 24px 24px 0 0;
+  }
+
+  .book-page-right {
+  border-radius: 0 0 24px 24px;
+  }
+
+  .binder-rings {
+  display: none;
+  }
+
+  .recipe-grid {
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+
+  .navbar-logo {
+    font-size: 1.2rem;
+  }
+
+  .navbar-capybara {
+    font-size: 1.5rem;
+  }
+
+  .language-option {
+    min-width: 42px;
+
+    padding: 6px 9px;
+
+    font-size: 0.8rem;
+  }
+
+  .theme-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero {
+    padding:
+      60px
+      5px
+      40px;
+  }
+
+  .hero-capybara {
+    font-size: 2.8rem;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .search-bar {
+    height: 58px;
+
+    padding-left: 16px;
+  }
+
+  .search-button {
+    height: 44px;
+
+    padding: 0 18px;
+  }
+
+  .category-grid {
+  grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+  align-items: flex-start;
+  }
+
+  .view-all-button {
+  display: none;
+  }
+
+  .recipe-grid {
+  grid-template-columns: 1fr;
+  }
+
+}
+
+/* ========================================
+   Categories Section
+======================================== */
+.categories-section {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 20px auto 0;
+  padding: 50px 0 70px;
+}
+
+/* ---------- Section Heading ---------- */
+.section-heading {
+  margin-bottom: 28px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.section-label {
+  display: inline-block;
+
+  margin-bottom: 7px;
+
+  color: var(--secondary);
+
+  font-size: 0.75rem;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 2rem;
+  font-weight: 800;
+
+  letter-spacing: -0.7px;
+}
+
+.section-heading p {
+  margin: 7px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 1rem;
+}
+
+/* ---------- View All ---------- */
+.view-all-button {
+  padding: 10px 15px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  border: none;
+  border-radius: 999px;
+
+  background-color: transparent;
+  color: var(--text-secondary);
+
+  font-weight: 700;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.view-all-button:hover {
+  color: var(--text-primary);
+
+  background-color: #f3eadf;
+}
+
+/* ========================================
+   Category Grid
+======================================== */
+.category-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+/* ========================================
+   Category Card
+======================================== */
+.category-card {
+  min-height: 175px;
+
+  padding: 22px;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  text-align: left;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+
+  background-color: var(--surface);
+  color: var(--text-primary);
+
+  box-shadow: var(--shadow-soft);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #ddd0c3;
+
+  box-shadow:
+    0 12px 30px rgba(91, 70, 57, 0.12);
+}
+
+/* ---------- Category Icon ---------- */
+.category-icon {
+  width: 54px;
+  height: 54px;
+
+  margin-bottom: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background-color: #f7eee3;
+
+  font-size: 1.7rem;
+}
+
+/* ---------- Category Text ---------- */
+.category-info h3 {
+  margin: 0 0 5px;
+
+  color: var(--text-primary);
+
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.category-info p {
+  margin: 0;
+
+  max-width: 180px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.88rem;
+  font-weight: 500;
+
+  line-height: 1.45;
+}
+
+/* ---------- Arrow ---------- */
+.category-arrow {
+  position: absolute;
+
+  right: 20px;
+  bottom: 19px;
+
+  color: var(--secondary);
+
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  transition: transform 0.2s ease;
+}
+
+.category-card:hover .category-arrow {
+  transform: translateX(4px);
+}
