@@ -105,7 +105,7 @@ function RecipeCard({
           className="recipe-image"
           onError={(event) => {
             event.currentTarget.onerror = null
-            event.currentTarget.src = '/images/placeholder.svg'
+            event.currentTarget.src = '/placeholder.svg'
           }}
         />
 

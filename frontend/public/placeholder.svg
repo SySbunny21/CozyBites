@@ -1,11 +1,45 @@
 
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="800" height="520">
+
   <rect width="800" height="520" fill="#F5EBDD"></rect>
-  <circle cx="400" cy="235" r="112" fill="#FFF9F0"></circle>
-  <circle cx="400" cy="235" r="82" fill="none" stroke="#D7C4AE" stroke-width="9"></circle>
-  <path d="M270 165 V300 M258 165 V215 M282 165 V215" stroke="#A8B98A" stroke-width="12" stroke-linecap="round" fill="none"></path>
-  <path d="M535 165 Q575 225 535 270 V300" stroke="#D98255" stroke-width="12" stroke-linecap="round" fill="none"></path>
-  <text x="400" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="31" font-weight="bold" fill="#8A7D75">
-    Coming Soon
+
+  <!-- Soft background circles -->
+  <circle cx="120" cy="90" r="110" fill="#FFF9F0" opacity="0.6"></circle>
+  <circle cx="710" cy="450" r="145" fill="#E9D9C7" opacity="0.45"></circle>
+
+  <!-- Plate shadow -->
+  <ellipse cx="400" cy="264" rx="150" ry="135" fill="#D8C7B5" opacity="0.28"></ellipse>
+
+  <!-- Plate -->
+  <circle cx="400" cy="250" r="132" fill="#FFFDF9"></circle>
+  <circle cx="400" cy="250" r="103" fill="none" stroke="#E9D9C7" stroke-width="7"></circle>
+
+  <!-- Fork -->
+  <g stroke="#A8B98A" stroke-width="12" stroke-linecap="round" fill="none">
+    <path d="M220 164 V310"></path>
+    <path d="M200 164 V215 Q220 240 240 215 V164"></path>
+  </g>
+
+  <!-- Spoon -->
+  <g stroke="#D98255" stroke-width="12" stroke-linecap="round" fill="none">
+    <ellipse cx="580" cy="197" rx="24" ry="42"></ellipse>
+    <path d="M580 240 V310"></path>
+  </g>
+
+  <!-- Heart -->
+  <path d="M400 279
+           C355 248 346 225 363 209
+           C379 193 398 204 400 218
+           C402 204 421 193 437 209
+           C454 225 445 248 400 279Z" fill="#E9A889"></path>
+
+  <!-- Brand -->
+  <text x="400" y="425" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="36" font-weight="800" fill="#6F584B">
+    CozyBites
   </text>
+
+  <text x="400" y="458" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#A18F82">
+    Something delicious is coming...
+  </text>
+
 </svg>
