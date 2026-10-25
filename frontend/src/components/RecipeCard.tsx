@@ -101,8 +101,12 @@ function RecipeCard({
             language === 'en'
               ? recipe.name
               : recipe.nameZh
-          }
+          } 
           className="recipe-image"
+          onError={(event) => {
+            event.currentTarget.onerror = null
+            event.currentTarget.src = '/images/placeholder.svg'
+          }}
         />
 
 

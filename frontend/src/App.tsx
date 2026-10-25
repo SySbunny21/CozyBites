@@ -9,6 +9,8 @@ import RecipeCard from './components/RecipeCard'
 
 import { recipes } from './data/recipes'
 
+import { getRandomRecipes } from './utils/randomRecipes'
+
 
 function App() {
 
@@ -32,6 +34,20 @@ function App() {
 
     return savedTheme === 'dark' ? 'dark' : 'light'
   })
+
+  /* ========================================
+     Random Receipes
+  ======================================== */
+
+  const [randomRecipes, setRandomRecipes] = useState(() =>
+    getRandomRecipes(recipes, 3)
+  )
+
+  const shuffleRecipes = () => {
+    setRandomRecipes((previous) =>
+      getRandomRecipes(recipes, 3, previous)
+    )
+  }
 
 
   /* ========================================
@@ -298,59 +314,63 @@ function App() {
 
         <section className="cozy-picks-section">
 
-          <div className="section-heading">
-
+          <div className="section-heading random-section-heading">
             <div>
-
               <span className="section-label">
                 {language === 'en'
-                  ? 'COZY PICKS'
-                  : '今日精选'}
+                  ? "WHAT'S COOKING TODAY?"
+                  : '今日灵感'}
               </span>
-
 
               <h2>
                 {language === 'en'
-                  ? "Recipes we're loving"
-                  : '我们最近喜欢的食谱'}
+                  ? 'What should we cook?'
+                  : '今天吃什么？'}
               </h2>
-
 
               <p>
                 {language === 'en'
-                  ? 'A few delicious ideas picked for you.'
-                  : '为你挑选几道值得尝试的美味。'}
+                  ? "Can't decide? Let CozyBites pick for you!"
+                  : '不知道做什么？让 CozyBites 帮你挑！'}
               </p>
-
             </div>
 
-
-            <button className="view-all-button">
+            <button
+              className="view-all-button shuffle-button"
+              onClick={shuffleRecipes}
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >   
+                <path d="m18 14 4 4-4 4" />
+                <path d="m18 2 4 4-4 4" />
+                <path d="M2 18h2c6 0 8-12 14-12h4" />
+                <path d="M2 6h2c3 0 5 3 7 6" />
+                <path d="M14 16c1 1 2 2 4 2h4" />
+              </svg>
 
               {language === 'en'
-                ? 'View all'
-                : '查看全部'}
-
-              <span>→</span>
-
+                ? 'Surprise me'
+                : '换一批'}
             </button>
-
           </div>
 
 
           <div className="recipe-grid">
 
-            {recipes
-              .slice(0, 3)
-              .map((recipe) => (
-
-                <RecipeCard
-                  key={recipe.id}
-                  recipe={recipe}
-                  language={language}
-                />
-
-              ))}
+            {randomRecipes.map((recipe) => (
+              <RecipeCard
+                key={recipe.id}
+                recipe={recipe}
+                language={language}
+              />
+            ))}
 
           </div>
 

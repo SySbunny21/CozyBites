@@ -1,0 +1,11 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520">
+  <rect width="800" height="520" fill="#F5EBDD"></rect>
+  <circle cx="400" cy="235" r="112" fill="#FFF9F0"></circle>
+  <circle cx="400" cy="235" r="82" fill="none" stroke="#D7C4AE" stroke-width="9"></circle>
+  <path d="M270 165 V300 M258 165 V215 M282 165 V215" stroke="#A8B98A" stroke-width="12" stroke-linecap="round" fill="none"></path>
+  <path d="M535 165 Q575 225 535 270 V300" stroke="#D98255" stroke-width="12" stroke-linecap="round" fill="none"></path>
+  <text x="400" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="31" font-weight="bold" fill="#8A7D75">
+    Coming Soon
+  </text>
+</svg>

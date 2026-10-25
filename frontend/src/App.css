@@ -1015,6 +1015,46 @@
 }
 
 /* ========================================
+   Random Recipe Section
+======================================== */
+
+.random-section-heading {
+  align-items: center;
+}
+
+.shuffle-button {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+  padding: 12px 18px;
+
+  white-space: nowrap;
+
+  background-color: var(--secondary);
+  color: #ffffff;
+
+  border-radius: 999px;
+}
+
+.shuffle-button svg {
+  width: 17px;
+  height: 17px;
+
+  flex-shrink: 0;
+}
+
+.shuffle-button:hover {
+  background-color: var(--secondary);
+  color: #ffffff;
+
+  opacity: 0.9;
+}
+
+/* ========================================
    Responsive Design
 ======================================== */
 @media (max-width: 800px) {
@@ -1341,4 +1381,21 @@
 
 .category-card:hover .category-arrow {
   transform: translateX(4px);
+}
+
+@media (max-width: 520px) {
+  .random-section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .random-section-heading h2 {
+    font-size: 1.75rem;
+  }
+
+  .shuffle-button {
+    display: inline-flex;
+    align-self: flex-start;
+  }
 }
